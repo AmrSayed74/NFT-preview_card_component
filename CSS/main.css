@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Work+Sans:wght@200;300;400;500;600;800&display=swap");
+
+/*Start Variables*/
+:root {
+  /* Primary */
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  /*Neutral */
+  --mainBG-Color: hsl(217, 54%, 11%);
+  --cardBG-Color: hsl(216, 50%, 16%);
+  --line-Color: hsl(215, 32%, 27%);
+  --Neutral-White: hsl(0, 0%, 100%);
+  --mainPadding: 10px;
+  --mainTransition: opacity 0.5s ease-in-out;
+}
+/*End Variables*/
+
+/* Start Styling */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  background-color: var(--mainBG-Color);
+  color: hsl(0, 0%, 100%, 75%);
+  padding: calc(var(--mainPadding) + 15px);
+  
+}
+.container {
+  background-color: var(--cardBG-Color);
+  padding: 20px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+article:nth-child(1) img {
+  max-width: 100%;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+article:nth-child(1) {
+  position: relative;
+}
+article:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: calc(100% - 5px);
+  background-color: var(--Cyan);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  transition: var(--mainTransition);
+  opacity: 0;
+  -webkit-transition: var(--mainTransition);
+  -moz-transition: var(--mainTransition);
+  -ms-transition: var(--mainTransition);
+  -o-transition: var(--mainTransition);
+}
+article:nth-child(1):hover::before {
+  background-color: var(--Cyan);
+  z-index: 999;
+  opacity: .5;
+  cursor: pointer;
+}
+article .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transition: var(--mainTransition) ;
+  -webkit-transition: var(--mainTransition) ;
+  -moz-transition: var(--mainTransition) ;
+  -ms-transition: var(--mainTransition) ;
+  -o-transition: var(--mainTransition) ;
+  opacity: 0;
+}
+article:nth-child(1):hover .icon {
+  opacity: .5;
+}
+
+p {
+  font-weight: 300;
+}
+article:nth-child(2) h2 {
+  padding: 10px 0px 5px;
+  color: white;
+}
+article:nth-child(2) h2:hover {
+  color: var(--Cyan);
+  cursor: pointer;
+}
+article:nth-child(2) p {
+  color: var(--Soft-blue);
+  padding: 10px 0px 5px;
+}
+ul {
+  list-style: none;
+  padding: 10px 0px 0px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--line-Color) ;
+}
+ul li:nth-child(1) {
+  color: var(--Cyan);
+  margin-right: 100px;
+}
+ul li:nth-child(1),
+ul li:nth-child(2) {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.container ul li img {
+  margin-right: 5px;
+}
+article:nth-child(4) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+article:nth-child(4) img {
+  width: 35px;
+  margin-right: 10px ;
+  border: white solid 2px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+article:nth-child(4) span {
+  color: white;
+  font-weight: 400;
+}
+article:nth-child(4) span:hover {
+  color: var(--Cyan);
+  cursor: pointer;
+}
+.attribution {
+  font-size: 16px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/*End Styling*/
+
+@media (min-width: 375px) {
+  .container {
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  article:nth-child(3) ul {
+    display: flex;
+    justify-content: flex-start;
+  }
+  ul li:nth-child(1) {
+    margin-right: 50px;
+  }
+}
+@media (min-width: 500px) {
+  .container {
+    width: 450px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  article:nth-child(3) ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
